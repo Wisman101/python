@@ -1,0 +1,492 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python</title>
+    <link rel="stylesheet" href="Technical%20documentation.css" type="text/css">
+</head>
+<body>
+<main id="main-doc">
+    <div id="dropdown">
+        <span class="span"></span>
+        <span class="span"></span>
+        <span class="span"></span>
+        <nav id="navbar">
+            <header>
+                Python Documentation
+            </header>
+            <ul>
+                <li>
+                    <a class="nav-link" href="#2.1_values_and_types">
+                        2.1 Values and types
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.2_variables">
+                        2.2 Variables
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.3_variable_names_and_keywords">
+                        2.3 Variable names and keywords
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.4_statements">
+                        2.4 Statements
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.5_operators_and_operands">
+                        2.5 Operators and operands
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.6_expressions">
+                        2.6 Expressions
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.7_order_of_operation">
+                        2.7 Order of operation
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.8_modulus_operator">
+                        2.8 Modulus operator
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.9_string_operations">
+                        2.9 String operations
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#2.10_asking_the_user_for_input">
+                        2.10 Asking the user for input
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#reference">
+                        Reference
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <article id="main">
+        <h1>Chapter 2<br>Variables, expressions, and statements</h1>
+        <section class="main-section" id="2.1_values_and_types">
+            <header ><br>2.1 values and types</header>
+            <p>
+                A value is one of the basic things a program works with, like a letter or a number.
+                The values we have seen so far are 1, 2, and “Hello, World!”
+            </p>
+            <p>
+                These values belong to diﬀerent types: 2 is an integer, and “Hello, World!” is a
+                string, so called because it contains a “string” of letters. You (and the interpreter)
+                can identify strings because they are enclosed in quotation marks.
+            </p>
+            <p>
+                The print statement also works for integers. We use the python command to start
+                the interpreter.
+            </p>
+            <code>
+                python<br>
+                >>> print(4)<br>
+                4
+            </code>
+            <p>
+                If you are not sure what type a value has, the interpreter can tell you.
+            </p>
+            <code>
+                >>> type('Hello, World!')<br>
+                < class 'str'><br>
+                >>> type(17)<br>
+                < class 'int'><br>
+            </code>
+            <p>
+                Not surprisingly, strings belong to the typestr and integers belong to the type
+                int. Less obviously, numbers with a decimal point belong to a type calledfloat,
+                because these numbers are represented in a format called ﬂoating point.
+            </p>
+            <code>
+                >>> type(3.2)<br>
+                < class 'float'>
+            </code>
+        </section>
+
+        <section class="main-section" id="2.2_variables">
+            <header ><br><br>2.2 Variables</header>
+            <p>
+                One of the most powerful features of a programming language is the ability to
+                manipulate variables. A variable is a name that refers to a value.
+            </p>
+            <p>
+                An assignment statement creates new variables and gives them values:
+            </p>
+            <code>
+                >>> message ='And now for something completely different'<br>
+                >>> n=17<br>
+                >>> pi=3.1415926535897931
+            </code>
+            <p>
+                This example makes three assignments. The first assigns a string to a new variable
+                named message; the second assigns the integer 17 ton; the third assigns the
+                (approximate) value ofπ to pi.
+            </p>
+            <p>
+                To display the value of a variable, you can use a print statement:
+            </p>
+            <code>
+                >>> print(n)<br>
+                17<br>
+                >>> print(pi)<br>
+                3.141592653589793
+            </code>
+            <p>
+                The type of a variable is the type of the value it refers to.
+            </p>
+            <code>
+                >>> type(message)<br>
+                < class 'str'><br>
+                >>> type(n)<br>
+                < class 'int'><br>
+                >>> type(pi)<br>
+                < class 'float'>
+            </code>
+        </section>
+
+        <section class="main-section" id="2.3_variable_names_and_keywords">
+            <header ><br><br>2.3 Variable names and keywords</header>
+            <p>
+                Programmers generally choose names for their variables that are meaningful and
+                document what the variable is used for.
+            </p>
+            <p>
+                Variable names can be arbitrarily long. They can contain both letters and numbers,
+                but they cannot start with a number. It is legal to use uppercase letters, but it is
+                a good idea to begin variable names with a lowercase letter (you’ll see why later).
+            </p>
+            <p>
+                The underscore character(_) can appear in a name. It is often used in names with
+                multiple words, such as my_name or air speed_of_unladen_swallow. Variable
+                names can start with an underscore character, but we generally avoid doing this
+                unless we are writing library code for others to use.
+            </p>
+            <p>
+                If you give a variable an illegal name, you get a syntax error:
+            </p>
+            <code>
+                >>> 76trombones = 'big parade'<br>
+                SyntaxError: invalid syntax<br>
+                >>> more@ =1000000<br>
+                SyntaxError: invalid syntax<br>
+                >>> class ='Advanced Theoretical Zymurgy'<br>
+                SyntaxError: invalid syntax
+            </code>
+            <p>
+                76trombones is illegal because it begins with a number. more@ is illegal because
+                it contains an illegal character, @. But what’s wrong with class?
+            </p>
+            <p>
+                It turns out that class is one of Python’s keywords. The interpreter uses keywords
+                to recognize the structure of the program, and they cannot be used as variable
+                names.
+            </p>
+            <p>
+                Python has a total of 35 reserved keywords. some of pythons reserved keywords are:<br>
+            </p>
+            <ul>
+                <li>and</li>
+                <li>del</li>
+                <li>from</li>
+                <li>if</li>
+                <li>else</li>
+                <li>not</li>
+                <li>while</li>
+                <li>or</li>
+                <li>return</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="2.4_statements">
+            <header><br><br>2.4 Statements</header>
+            <p>
+                A statement is a unit of code that the Python interpreter can execute. We have
+                seen two kinds of statements: print being an expression statement and assignment.
+            </p>
+            <p>
+                When you type a statement in interactive mode, the interpreter executes it and
+                displays the result, if there is one.
+            </p>
+            <p>
+                A script usually contains a sequence of statements. If there is more than one
+                statement, the results appear one at a time as the statements execute.
+            </p>
+            <p>
+                For example, the script
+            </p>
+            <code>
+                print(1)<br>
+                x= 2<br>
+                print(x)
+            </code>
+            <p>
+                produces the output
+            </p>
+            <code>
+                1<br>
+                2
+            </code>
+            <p>
+                The assignment statement produces no output.
+            </p>
+        </section>
+
+        <section class="main-section" id="2.5_operators_and_operands">
+            <header ><br><br>2.5 Operators and operands </header>
+            <p>
+                Operators are special symbols that represent computations like addition and multiplication.
+                The values the operator is applied to are called operands
+            </p>
+            <p>
+                The operators+,-,*,/, and** perform addition, subtraction, multiplication,
+                division, and exponentiation, as in the following examples:
+            </p>
+            <code>
+                20+32<br>
+                hour-1<br>
+                hour*60+minute<br>
+                minute/60<br>
+                5**2<br>
+                (5+9)*(15-7)
+            </code>
+            <p>
+                There has been a change in the division operator between Python 2.x and Python
+                3.x. In Python 3.x, the result of this division is a floating point result:
+            </p>
+            <code>
+                >>> minute =59<br>
+                >>> minute/60<br>
+                0.9833333333333333
+            </code>
+            <p>
+                The division operator in Python 2.0 would divide two integers and truncate the
+                result to an integer:
+            </p>
+            <code>
+                >>> minute =59<br>
+                >>> minute/60<br>
+                0
+            </code>
+            <p>
+                To obtain the same answer in Python 3.0 use ﬂoored (// integer) division.
+            </p>
+            <code>
+                >>> minute =59<br>
+                >>> minute//60<br>
+                0
+            </code>
+            <p>
+                In Python 3.0 integer division functions much more as you would expect if you
+                entered the expression on a calculator.
+            </p>
+        </section>
+
+        <section class="main-section" id="2.6_expressions">
+            <header ><br><br>2.6 Expressions</header>
+            <p>
+                An expression is a combination of values, variables, and operators. A value all by
+                itself is considered an expression, and so is a variable, so the following are all legal
+                expressions (assuming that the variable x has been assigned a value):
+            </p>
+            <code>
+                17<br>
+                x<br>
+                x+ 17
+            </code>
+            <p>
+                If you type an expression in interactive mode, the interpreter evaluates it and
+                displays the result:
+            </p>
+            <code>
+                >>> 1+1<br>
+                2
+            </code>
+            <p>
+                But in a script, an expression all by itself doesn’t do anything!This is a common
+                source of confusion for beginners.
+            </p>
+        </section>
+
+        <section class="main-section" id="2.7_order_of_operation">
+            <header ><br><br>2.7 Order of operation</header>
+            <p>
+                When more than one operator appears in an expression, the order of evaluation
+                depends on the rules of precedence. For mathematical operators, Python follows
+                mathematical convention. The acronym PEMDAS is a useful way to remember
+                the rules:
+            </p>
+            <ul>
+                <li>
+                    Parentheses have the highest precedence and can be used to force an expression
+                    to evaluate in the order you want. Since expressions in parentheses are
+                    evaluated ﬁrst,2 *(3-1) is 4, and(1+1)**(5-2) is 8. You can also use
+                    parentheses to make an expression easier to read, as in(minute *100) /
+                    60, even if it doesn’t change the result.
+                </li>
+                <li>
+                    Exponentiation has the next highest precedence, so2**1+1 is 3, not 4, and
+                    3*1**3 is 3, not 27.
+                </li>
+                <li>
+                    Multiplication and Division have the same precedence, which is higher than
+                    Addition and Subtraction, which also have the same precedence. So2*3-1
+                    is 5, not 4, and6+4/2 is 8, not 5.
+                </li>
+                <li>
+                    Operators with the same precedence are evaluated from left to right. So the
+                    expression5-3-1 is 1, not 3, because the5-3 happens ﬁrst and then1 is
+                    subtracted from 2.
+                </li>
+            </ul>
+            <p>
+                When in doubt, always put parentheses in your expressions to make sure the computations
+                are performed in the order you intend.
+            </p>
+        </section>
+
+        <section class="main-section" id="2.8_modulus_operator">
+            <header ><br><br>2.8 Modulus operator</header>
+            <p>
+                The modulus operator works on integers and yields the remainder when the ﬁrst
+                operand is divided by the second. In Python, the modulus operator is a percent
+                sign (%). The syntax is the same as for other operators:
+            </p>
+            <code>
+                >>> quotient =7 //3<br>
+                >>> print(quotient)<br>
+                2<br>
+                >>> remainder =7 %3<br>
+                >>> print(remainder)<br>
+                1
+            </code>
+            <p>
+                So 7 divided by 3 is 2 with 1 left over.
+            </p>
+            <p>
+                The modulus operator turns out to be surprisingly useful. For example, you can
+                check whether one number is divisible by another: if x %y is zero, thenx is
+                divisible by y.
+            </p>
+            <p>
+                You can also extract the right-most digit or digits from a number. For example,
+                x% 10 yields the right-most digit ofx (in base 10). Similarly,x% 100 yields the
+                last two digits.
+            </p>
+        </section>
+
+        <section class="main-section" id="2.9_string_operations">
+            <header ><br><br>2.9 String operations</header>
+            <p>
+                The + operator works with strings, but it is not addition in the mathematical sense.
+                Instead it performs concatenation, which means joining the strings by linking them
+                end to end. For example:
+            </p>
+            <code>
+                >>> first =10<br>
+                >>> second =15<br>
+                >>> print(first+second)<br>
+                25<br>
+                >>> first ='100'<br>
+                >>> second ='150'<br>
+                >>> print(first + second)<br>
+                100150
+            </code>
+            <p>
+                The* operator also works with strings by multiplying the content of a string by
+                an integer. For example:
+            </p>
+            <code>
+                >>> first ='Test '<br>
+                >>> second =3<br>
+                >>> print(first * second)<br>
+                Test Test Test
+            </code>
+        </section>
+
+        <section class="main-section" id="2.10_asking_the_user_for_input">
+            <header ><br><br>2.10 Asking the user for input</header>
+            <p>
+                Sometimes we would like to take the value for a variable from the user via their
+                keyboard. Python provides a built-in function called input that gets input from
+                the keyboard1. When this function is called, the program stops and waits for the
+                user to type something. When the user pressesReturn orEnter, the program
+                resumes and input returns what the user typed as a string.
+            </p>
+            <code>
+                >>> inp= input()<br>
+                Some silly stuff<br>
+                >>> print(inp)<br>
+                Some silly stuff
+            </code>
+            <p>
+                Before getting input from the user, it is a good idea to print a prompt telling the
+                user what to input. You can pass a string to input to be displayed to the user
+                before pausing for input:
+            </p>
+            <code>
+                >>> name= input('What is your name?\n')<br>
+                What is your name?<br>
+                Chuck<br>
+                >>> print(name)<br>
+                Chuck
+            </code>
+            <p>
+                The sequence\n at the end of the prompt represents a newline, which is a special
+                character that causes a line break. That’s why the user’s input appears below the
+                prompt.
+            </p>
+            <p>
+                If you expect the user to type an integer, you can try to convert the return value
+                to int using the int() function:
+            </p>
+            <code>
+                >>> prompt ='What...is the airspeed velocity of an unladen swallow?\n'<br>
+                >>> speed =input(prompt)<br>
+                What...is the airspeed velocity of an unladen swallow?<br>
+                17<br>
+                >>> int(speed)<br>
+                17<br>
+                >>> int(speed) + 5<br>
+                22
+            </code>
+            <p>
+                But if the user types something other than a string of digits, you get an error:
+            </p>
+            <code>
+                >>> speed =input(prompt)<br>
+                What...is the airspeed velocity of an unladen swallow?<br>
+                What do you mean, anAfrican or aEuropean swallow?<br>
+                >>> int(speed)<br>
+                ValueError: invalid literal for int() with base10:
+            </code>
+            <p>
+                We will see how to handle this kind of error later.
+            </p>
+        </section>
+        <section class="main-section" id="reference">
+            <header ><br> Reference</header>
+            <p>
+                All documentation from this page is taken from <strong><em>"Python for everybody by Dr. Charles R. Severance"</em></strong>
+            </p>
+        </section>
+    </article>
+</main>
+</body>
+</html>
